@@ -5,7 +5,7 @@ layout: "base.njk"
 <div class="container">
   <div class="profile">
     <img src="https://placehold.co/100x100" alt="Profile Picture" class="profile-pic">
-    <h1 class="profile-name">My Creative Projects</h1>
+    <h1 class="profile-name">{{site.studioName}}</h1>
   </div>
   <div class="links">
     <a href="https://discord.gg/47DQVUnbD6" class="link">Discord</a>
