@@ -1,12 +1,35 @@
+:root {
+  --main-bg-color: #fbfbf9;
+  --main-fg-dark: #262626;
+}
+
 body {
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: var(--main-bg-color);
+  color: var(--main-fg-dark);
   font-family: sans-serif;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 1em;
   min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navBarLogo {
+  letter-spacing: 0.2rem;
+}
+button {
+  border-radius: 0.4em;
+  outline: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+button.emailList {
+  padding: 1em 1.5em;
+  background-color: var(--main-fg-dark);
+  color: var(--main-bg-color);
 }
 
 .container {

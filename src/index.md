@@ -1,5 +1,5 @@
 ---
-layout: "base.njk"
+layout: "headerFooterlayout.njk"
 ---
 
 <div class="container">
