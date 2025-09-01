@@ -1,22 +1,35 @@
+/* Mobile first styles */
 :root {
+  min-width: 320px;
   --main-bg-color: #fbfbf9;
   --main-fg-dark: #262626;
+  --action-btn-color: orange;
+  --disabled-btn-color: #4f4f4f;
+}
+
+.mainHorizontalMargin {
+  margin-right: clamp(1rem, 1.5vw, 2rem);
+  margin-left: clamp(1rem, 1.5vw, 2rem);
 }
 
 body {
   background-color: var(--main-bg-color);
   color: var(--main-fg-dark);
   font-family: sans-serif;
-  margin: 1em;
   min-height: 100vh;
+  margin: 0;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .navBarLogo {
+  margin-top: auto;
+  margin-bottom: auto;
   letter-spacing: 0.2rem;
 }
 button {
@@ -25,15 +38,145 @@ button {
   cursor: pointer;
   border: none;
 }
+.btn {
+  cursor: pointer;
+  padding: 1em 1.5em;
+  border-radius: 0.4em;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 0.9rem;
+}
+
+.actionBtn {
+  background-color: var(--action-btn-color);
+  color: var(--main-fg-color);
+}
+
+.disableBtn {
+  background-color: var(--disabled-btn-color);
+  color: var(--main-bg-color);
+}
+
+a {
+  color: var(--action-btn-color);
+}
 
 button.emailList {
   padding: 1em 1.5em;
   background-color: var(--main-fg-dark);
   color: var(--main-bg-color);
+  font-size: clamp(1rem, 1vw, 1.25rem);
 }
 
-.container {
-  text-align: center;
+.mainHero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  height: 400px;
+  background-image:  linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/Chap2-Pg1.jpg');
+  background-position: 50% 5%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainHero::after {
+  transform: scaleY(-1);
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  left: 0;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
+  background-size: 200%;
+}
+
+.mxmBanner {
+  background-position: 20% 0%;
+}
+
+.heroFooter {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: start;
+  width: 100%;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: bold;
+  text-align: left;
+  color: var(--main-bg-color);
+}
+
+.introContent {
+  font-size: clamp(2rem, 3vw, 3rem);
+  text-align: left;
+  padding-top: clamp(2rem, 4vw, 6rem);
+  padding-bottom: clamp(2rem, 4vw, 6rem);
+}
+.studioName {
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.studioMission {
+  font-weight: lighter;
+  color: var(--main-fg-dark);
+  margin-bottom: 2rem;
+}
+
+.projectCard {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--main-bg-color);
+}
+
+.projectBanner {
+  display: grid;
+  grid-template-rows: 25px auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 300px;
+}
+
+.projectType {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  text-align: left;
+  padding-bottom: clamp(0.5rem, 1vw, 1rem);
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+.projectName {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  text-align: left;
+  padding-bottom: 1rem;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+.projectAbout {
+  grid-row: 3;
+  grid-column: 2 / -1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+.projectDescription {
+  padding-bottom: 2rem;
+}
+.projectExploreLink {
+  text-decoration: none;
+  width: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
 }
 
 .profile-pic {
@@ -66,4 +209,66 @@ button.emailList {
 
 .link:hover {
   background-color: #555;
+}
+
+.dareToTearContainer {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tablets and up */
+@media (min-width: 600px) {
+
+.mainHero::after {
+  background-size: 60%;
+}
+
+.footer {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+}
+
+/* Desktops and up */
+@media (min-width: 900px) {
+
+.projectBanner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr;
+  height: 300px;
+}
+
+.projectType {
+  grid-row: 1;
+  grid-column: 5 / -1;
+  padding-top: 1rem;
+}
+.projectName {
+  grid-row: 1;
+  grid-column: 1 / -1;
+}
+.projectAbout {
+  grid-row: 1;
+  grid-column: 8 / 11;
+}
+.projectDescription {
+  padding-bottom: 2rem;
+}
+.projectExploreLink {
+  text-decoration: none;
+  width: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
 }

@@ -1,0 +1,29 @@
+[
+    {
+      "name": "Monsters and Myriads",
+      "description": "When a vial of coveted 'God Blood' gets into the hands of a highschooler, the small Wisconsin town of Shenee will never be the same. This comedic, supernatural adventure pits an unlikley group of teens against false gods, spooky monsters, and homecoming",
+      "type": "Comic",
+      "url": "https://monstersandmyriads.com",
+      "background": "img/SF-Slider-2024.png",
+      "className": "mxm",
+      "live": true
+    },
+    {
+      "name": "To Charm a Train",
+      "description": "In a world where Thomas Edison discovers teleportation alongside the lightbulb and a magical race of 'Fae' mediate between human and animal, a cowboy fae recruits the last train to steal back the western storms from the Boston mob.",
+      "type": "Comic",
+      "url": "https://tapas.io/series/To-Charm-A-Train",
+      "background": "img/train-bg.png",
+      "className": "charm",
+      "live": true
+    },
+    {
+      "name": "Soot and Charms",
+      "description": "The whole flavor of To Charm of Train expanded, remastered, and revised to empower YOU to join in through a partnership with <a href='https://graftbound.com/'>Graftbound Press</a>.",
+      "type": "TTRPG",
+      "url": "",
+      "background": "",
+      "className": "soot",
+      "live": false
+    }
+] 
