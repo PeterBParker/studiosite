@@ -8,26 +8,36 @@
 }
 
 .mainHorizontalMargin {
-  margin-right: clamp(1rem, 1.5vw, 2rem);
-  margin-left: clamp(1rem, 1.5vw, 2rem);
+  padding-right: clamp(1rem, 1.5vw, 2rem);
+  padding-left: clamp(1rem, 1.5vw, 2rem);
+}
+
+html, body {
+  overscroll-behavior: none;
 }
 
 body {
   background-color: var(--main-bg-color);
   color: var(--main-fg-dark);
-  font-family: sans-serif;
   min-height: 100vh;
   margin: 0;
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  color: var(--main-bg-color);
 }
 
 .navBarLogo {
+  background-image: url('img/VEILTORN-logo.webp');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 50px;
   margin-top: auto;
   margin-bottom: auto;
   letter-spacing: 0.2rem;
@@ -45,6 +55,7 @@ button {
   text-transform: uppercase;
   font-weight: lighter;
   font-size: 0.9rem;
+  text-decoration: none;
 }
 
 .actionBtn {
@@ -61,6 +72,13 @@ a {
   color: var(--action-btn-color);
 }
 
+.contactUsBtn {
+  background-image: url('img/contactus.webp');
+  width: 90px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
 button.emailList {
   padding: 1em 1.5em;
   background-color: var(--main-fg-dark);
@@ -71,42 +89,61 @@ button.emailList {
 .mainHero {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  height: 400px;
-  background-image:  linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/Chap2-Pg1.jpg');
-  background-position: 50% 5%;
+  justify-content: space-between;
+  height: 100vh;
+  height: 100svh;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  background-image:  linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/floating-casper.webp');
+  background-position: 50% 40%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.mainHero::after {
-  transform: scaleY(-1);
-  content: "";
-  position: absolute;
-  height: 20px;
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: end;
   width: 100%;
-  left: 0;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
-  background-size: 200%;
-}
-
-.mxmBanner {
-  background-position: 20% 0%;
+  color: var(--main-bg-color);
 }
 
 .heroFooter {
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: start;
   width: 100%;
 }
 
 .heroTitle {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  margin-top: 0;
+  font-size: clamp(3.5rem, 8vw, 4rem);
   font-weight: bold;
   text-align: left;
-  color: var(--main-bg-color);
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.studioTaglineContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  min-width: 343px;
+  width: 40%;
+  max-width: 500px;
+  font-weight: lighter;
+}
+
+.studioTagline {
+  font-size: 1.5rem;
+  text-align: left;
+  line-height: 2rem;
 }
 
 .introContent {
@@ -128,33 +165,96 @@ button.emailList {
 
 .projectCard {
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  background-size: 100% auto;
   color: var(--main-bg-color);
+  background-size: cover;
+  height: 90vh;
+  height: 90svh;
+  display: flex;
+  padding-bottom: 2rem;
 }
+
+/* All the project specific styling for the project banners is here */
+.godbloodBanner {
+  background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/vol1godblood-MOBILE-banner.webp');
+  background-position: 80% 20%;
+}
+
+.godbloodBanner .projectName {
+  background-image: url('img/vol1godblood-PC-logo.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 300px;
+}
+
+.monstersmyriadsBanner {
+  background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/monstersmyriads-MOBILE-banner1.webp');
+  background-position: 60% 0%;
+}
+
+.monstersmyriadsBanner .projectName {
+  background-image: url('img/monstersmyriads-logo.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 300px;
+}
+
+.charmtrainBanner{
+  background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/charmtrain-MOBILE-banner1.webp');
+  background-position: 20% 30%;
+}
+
+.charmtrainBanner .projectName {
+  background-image: url('img/charmtrain-logo.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  height: 100px;
+  width: 300px;
+}
+
+.sootcharmBanner {
+  background-image: url('img/sootcharm-MOBILE-banner1.webp');
+}
+
+.sootcharmBanner .projectName {
+  background-image: url('img/sootcharms-logo.webp');
+  background-size: contain;
+  background-position: 0%;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 300px;
+}
+
+.sootcharmBanner .projectExploreLink {
+  width: 110px;
+}
+
+/* end project specific styling */
 
 .projectBanner {
   display: grid;
-  grid-template-rows: 25px auto auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 300px;
+  margin-top: auto;
+  grid-template-rows: 25px auto auto auto;
+  grid-template-columns: 1fr auto;
 }
 
 .projectType {
+  color: var(--action-btn-color);
   grid-row: 1;
   grid-column: 1 / -1;
   text-align: left;
   padding-bottom: clamp(0.5rem, 1vw, 1rem);
   text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
   font-weight: lighter;
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
 .projectName {
   grid-row: 2;
-  grid-column: 1 / -1;
+  grid-column: 2 / -1;
   text-align: left;
   padding-bottom: 1rem;
   font-size: clamp(2rem, 3vw, 3rem);
@@ -165,12 +265,15 @@ button.emailList {
   text-align: left;
   display: flex;
   flex-direction: column;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.75rem;
 }
 .projectDescription {
   padding-bottom: 2rem;
 }
 .projectExploreLink {
+  grid-row: 4;
+  grid-column: 2 / -1;
   text-decoration: none;
   width: 6rem;
   display: flex;
@@ -218,6 +321,8 @@ button.emailList {
 }
 
 .footer {
+  background-color: var(--main-fg-dark);
+  color: var(--main-bg-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -226,44 +331,68 @@ button.emailList {
 /* Tablets and up */
 @media (min-width: 600px) {
 
-.mainHero::after {
-  background-size: 60%;
+.mainHero {
+  background-size: 100% auto;
+  min-height: 400px;
 }
 
-.footer {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+.projectCard {
+  height: 90vh;
+  height: 90svh; 
+  min-height: 500px;
 }
 
-/* Desktops and up */
-@media (min-width: 900px) {
+.godbloodBanner .projectName {
+  background-image: url('img/vol1godblood-logo-MOBILE.webp');
+}
+
+.monstersmyriadsBanner {
+  background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/monstersmyriads-PC-banner1.webp');
+}
+
+.charmtrainBanner{
+  background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/charmtrain-PC-banner1.webp');
+}
+
+.godbloodBanner {
+  background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/vol1godblood-PC-banner.webp');
+}
+
+.sootcharmBanner {
+  background-image: url('img/sootcharm-PC-banner1.webp');
+}
 
 .projectBanner {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr;
-  height: 300px;
+  grid-template-columns: auto 200px 1fr 1fr auto; 
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  height: 100%;
 }
 
 .projectType {
   grid-row: 1;
-  grid-column: 5 / -1;
+  grid-column: 2;
   padding-top: 1rem;
+  text-align: right;
+  position: relative;
+  bottom: 0;
 }
 .projectName {
-  grid-row: 1;
-  grid-column: 1 / -1;
+  grid-row: 2;
+  grid-column: 3;
 }
 .projectAbout {
-  grid-row: 1;
-  grid-column: 8 / 11;
+  grid-row: 3;
+  grid-column: 3;
+  max-width: 600px;
+  line-height: 1.75rem;
 }
 .projectDescription {
   padding-bottom: 2rem;
 }
 .projectExploreLink {
+  grid-row: 4;
+  grid-column: 3;
   text-decoration: none;
   width: 6rem;
   display: flex;
@@ -271,4 +400,24 @@ button.emailList {
   justify-content: space-between;
 
 }
+
+.footer {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+}
+
+/* Animations */
+.actionBtn:hover {
+  animation: wiggle 0.5s infinite; /* Apply the wiggle animation on hover */
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(-5deg); }
+  75% { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
 }

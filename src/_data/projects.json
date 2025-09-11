@@ -5,6 +5,7 @@
       "type": "Comic",
       "url": "https://monstersandmyriads.com",
       "background": "img/SF-Slider-2024.png",
+      "mobileBackground": "img/SF-Slider-2024.png",
       "className": "mxm",
       "live": true
     },
@@ -13,7 +14,6 @@
       "description": "In a world where Thomas Edison discovers teleportation alongside the lightbulb and a magical race of 'Fae' mediate between human and animal, a cowboy fae recruits the last train to steal back the western storms from the Boston mob.",
       "type": "Comic",
       "url": "https://tapas.io/series/To-Charm-A-Train",
-      "background": "img/train-bg.png",
       "className": "charm",
       "live": true
     },
@@ -22,7 +22,7 @@
       "description": "The whole flavor of To Charm of Train expanded, remastered, and revised to empower YOU to join in through a partnership with <a href='https://graftbound.com/'>Graftbound Press</a>.",
       "type": "TTRPG",
       "url": "",
-      "background": "",
+      "mobileBackground": "",
       "className": "soot",
       "live": false
     }
