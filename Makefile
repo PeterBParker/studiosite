@@ -5,3 +5,7 @@ build:
 .PHONY: serve
 serve:
 	npx @11ty/eleventy --serve
+
+.PHONY: spellcheck
+spellcheck:
+	npx cspell "src/**/*"

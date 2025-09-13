@@ -1,5 +1,11 @@
 <div class="header mainHorizontalMargin">
-  <div class="navBarLogo">
-  </div>
+  <div class="navBarLogo"></div>
+  <div class="navBarSocials">
+    {%- for social in socials -%}
+    <a class="navBarSocialIconContainer socialIcon" href="{{ social.url }}" style="background-image:url(img/{{ social.icon }});">
+      <div class="navBarSocialIconLabel">{{ social.name }}</div>
+    </a>
+    {%- endfor -%}
     <a class="contactUsBtn btn actionBtn" href="mailto:nateandmo@veiltornstudios.com"></a>
+  </div>
 </div>

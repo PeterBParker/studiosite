@@ -27,8 +27,10 @@ body {
 }
 
 .header {
+  height: 50px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: var(--main-bg-color);
 }
 
@@ -36,6 +38,7 @@ body {
   background-image: url('img/VEILTORN-logo.webp');
   background-size: 100% auto;
   background-repeat: no-repeat;
+  background-position: 50% 50%;
   width: 200px;
   height: 50px;
   margin-top: auto;
@@ -56,6 +59,9 @@ button {
   font-weight: lighter;
   font-size: 0.9rem;
   text-decoration: none;
+  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
 }
 
 .actionBtn {
@@ -70,13 +76,61 @@ button {
 
 a {
   color: var(--action-btn-color);
+  cursor: pointer;
 }
 
+.navBarSocials {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-wrap: wrap-reverse;
+  justify-content: flex-end;
+}
+
+.navBarSocialIconContainer {
+  background-color: var(--main-fg-dark);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition:all 1s ease-in-out;
+}
+
+.navBarSocialIconLabel {
+  position:relative;
+  left: 60px;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.25rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display:inline-block;
+  overflow:hidden;
+  transition:all 0.3s ease-in-out;
+}
+
+.socialIcon {
+  display: inline-block;
+  background-size: auto 60%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  transition:all 0.3s ease-in-out;
+}
+
+
 .contactUsBtn {
+  display: block;
   background-image: url('img/contactus.webp');
   width: 90px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  padding: 1em 0.5em;
 }
 
 button.emailList {
@@ -168,8 +222,9 @@ button.emailList {
   background-size: 100% auto;
   color: var(--main-bg-color);
   background-size: cover;
-  height: 90vh;
-  height: 90svh;
+  height: 100vh;
+  height: 100svh;
+  min-height: 800px;
   display: flex;
   padding-bottom: 2rem;
 }
@@ -181,9 +236,10 @@ button.emailList {
 }
 
 .godbloodBanner .projectName {
-  background-image: url('img/vol1godblood-PC-logo.webp');
+  background-image: url('img/vol1godblood-logo-MOBILE.webp');
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: 0%;
   height: 100px;
   width: 300px;
 }
@@ -197,6 +253,7 @@ button.emailList {
   background-image: url('img/monstersmyriads-logo.webp');
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: 0%;
   height: 150px;
   width: 300px;
 }
@@ -229,7 +286,7 @@ button.emailList {
 }
 
 .sootcharmBanner .projectExploreLink {
-  width: 110px;
+  width: 120px;
 }
 
 /* end project specific styling */
@@ -237,7 +294,7 @@ button.emailList {
 .projectBanner {
   display: grid;
   margin-top: auto;
-  grid-template-rows: 25px auto auto auto;
+  grid-template-rows: 35px auto auto auto;
   grid-template-columns: 1fr auto;
 }
 
@@ -250,7 +307,7 @@ button.emailList {
   text-transform: uppercase;
   font-family: "Bebas Neue", sans-serif;
   font-weight: lighter;
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: 1.5rem; 
 }
 .projectName {
   grid-row: 2;
@@ -321,7 +378,7 @@ button.emailList {
 }
 
 .footer {
-  background-color: var(--main-fg-dark);
+  background-color: #273135;
   color: var(--main-bg-color);
   display: flex;
   flex-direction: column;
@@ -331,9 +388,23 @@ button.emailList {
 /* Tablets and up */
 @media (min-width: 600px) {
 
+.navBarSocialIconContainer:hover {
+  width: 120px;
+  margin-left:0.5rem;
+  border-radius: 10%;
+}
+
+.socialIcon:hover {
+  background-position: 15% 50%;
+}
+
 .mainHero {
   background-size: 100% auto;
   min-height: 400px;
+}
+
+.contactUsBtn {
+  padding: 1em 1.5em;
 }
 
 .projectCard {
@@ -343,15 +414,24 @@ button.emailList {
 }
 
 .godbloodBanner .projectName {
-  background-image: url('img/vol1godblood-logo-MOBILE.webp');
+  background-image: url('img/VOL1godblood-PC-logo.webp');
+  height: 80px;
 }
 
 .monstersmyriadsBanner {
   background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/monstersmyriads-PC-banner1.webp');
 }
 
+.monstersmyriadsBanner .projectName {
+  height: 180px;
+}
+
 .charmtrainBanner{
   background-image: linear-gradient(0deg,rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%), url('img/charmtrain-PC-banner1.webp');
+}
+
+.charmtrainBanner .projectName {
+  height: 80px;
 }
 
 .godbloodBanner {
@@ -362,15 +442,19 @@ button.emailList {
   background-image: url('img/sootcharm-PC-banner1.webp');
 }
 
+.sootcharmBanner .projectName {
+  height: 80px;
+}
+
 .projectBanner {
   display: grid;
   grid-template-columns: auto 200px 1fr 1fr auto; 
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 35px auto 1fr 1fr;
   height: 100%;
 }
 
 .projectType {
-  grid-row: 1;
+  grid-row: 2;
   grid-column: 2;
   padding-top: 1rem;
   text-align: right;
@@ -378,13 +462,14 @@ button.emailList {
   bottom: 0;
 }
 .projectName {
-  grid-row: 2;
+  grid-row: 3;
   grid-column: 3;
 }
 .projectAbout {
-  grid-row: 3;
+  grid-row: 4;
   grid-column: 3;
   max-width: 600px;
+  min-width: 400px;
   line-height: 1.75rem;
 }
 .projectDescription {
